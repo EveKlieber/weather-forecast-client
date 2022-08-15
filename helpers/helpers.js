@@ -1,13 +1,10 @@
 import axios from 'axios'
 
-
 export const getWeather = async (cityString) => {
 
-  // e.preventDefault();
-  let result;
   let axiosResp;
   try {
-    axiosResp = await axios.post('http://localhost:8080/getweather', cityString, {
+    axiosResp = await axios.post('http://localhost:8080/getweather', {city: cityString}, {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -17,12 +14,9 @@ export const getWeather = async (cityString) => {
       // withCredentials: true,
     });
 
-    console.debug("axiosResp.data:suc", axiosResp);
-    if (!axiosResp) {
-      console.debug("axiosResp.data:suc", axiosResp.data.response);
-    } else {
-      console.debug("axiosResp.data:else", axiosResp);
-    }
+    console.log(axiosResp.data)
+    return axiosResp.data
+    // console.debug("axiosResp.data:suc", axiosResp);
   } catch (error) {
     console.error(error);
     alert("Could not log in. Console for more Information");
@@ -30,3 +24,5 @@ export const getWeather = async (cityString) => {
 
 
 }
+
+//{city: cityString}
