@@ -33,6 +33,7 @@ export const GetWeather = () => {
         id="outlined-basic"
         label="enter location"
         variant="outlined"
+        value={input}
         onChange={e => {
           setInput(e.target.value);
           console.log(e.target.value);
@@ -46,7 +47,7 @@ export const GetWeather = () => {
    
     </div>
 
-        {Object.keys(resultWeather).length > 0 && <WeatherResult resultWeather = {resultWeather.result} />}
+        {Object.keys(resultWeather).length > 0 && <WeatherResult city = {input} resultWeather = {resultWeather.result} />}
       </>
 
 
