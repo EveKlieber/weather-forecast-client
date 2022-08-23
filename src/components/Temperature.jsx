@@ -1,22 +1,19 @@
 import Typography from '@mui/material/Typography';
 
-const Temperature = ({temp}) => {
+const Temperature = ({ temp }) => {
 
 
   return (
 
-    
-      <Typography 
-      variant="h3" 
+    <Typography
+      variant="h3"
       component="div"
-      style={{color: `${temp>24 ? "red" : "blue"}`}}
-      >
-        <>
-      {temp>0 && "+"}{temp}° 
+      style={{ color: `${temp > 24 ? "red" : "blue"}` }}
+    >
+      <>
+        {temp > 0 && "+"}{temp}°
       </>
-      </Typography>
-      
-   
+    </Typography>
 
   )
 }
